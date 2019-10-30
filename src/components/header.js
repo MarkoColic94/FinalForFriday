@@ -1,35 +1,26 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
-
-const Header = ({ siteTitle }) => (
+import React, { Children } from "react"
+const Header = (props) => {
+  console.log(props.children)
+  return (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `#00325b`,
+      marginBottom: `1.5rem`,
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+      padding: `4rem`,
+      margin: `0 auto`
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <div>{props.children}</div>
     </div>
   </header>
 )
+        }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
